@@ -11,7 +11,7 @@ https://github.com/user-attachments/assets/2d612ec2-73cb-4c16-92c3-936088ef030c
 
 # Переводы
 
-English: [English](https://github.com/PiaPsyker918/Wildberries-Parser-Script/tree/russian)
+English: [English](https://github.com/PiaPsyker918/Wildberries-Parser-Script/tree/main)
 
 # Требования 
 ```
