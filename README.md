@@ -1,33 +1,33 @@
 # Wildberries-Parser-Script
-A script that parses products from Wildberries.
+Скрипт, который парсит товары из Wildberries.
 
 <img width="1291" height="324" alt="WBParserLogo" src="https://github.com/user-attachments/assets/3166033a-97fd-49f1-a038-047c59634ba1" />
 
-Video preview:
+Видео пример:
 
 https://github.com/user-attachments/assets/2d612ec2-73cb-4c16-92c3-936088ef030c
 
-```(The script is currently in early access, and it will be integrated into the Telegram bot and other applications in the future. If you see a bug please text me.)```
+```(Скрипт в раннем доступе, и в будущем будет дорабатываться. Если вы увидите баг напишите мне.)```
 
-# Translations
+# Переводы
 
-Russian: [Russian]()
+English: [English](https://github.com/PiaPsyker918/Wildberries-Parser-Script/tree/russian)
 
-# Requirements 
+# Требования 
 ```
 requests
 ```
 
-# Installation
+# Загрузка
 
-1. Install the zip-file.
-2. Open CMD and write.
+1. Скачайте zip-файл.
+2. Откройте CMD и впишите.
 ```pip install requests```
-3. Next step in "How to use".
+3. Следующий шаг в "Как использовать".
 
-# How to use
+# Как использовать
 
-In CMD write 
+В CMD впишите
 
 Windows
 
@@ -41,21 +41,21 @@ Linux
 $ ./parser.py
 ```
 
-# Options
+# Опции
 
-```Query``` - What needs to be parsed.
+```Query``` - Какая категория должна быть запарсена.
 
-```Currensy``` - The currency for displaying prices.
+```Currensy``` - Валюта для отображения.
 
-```Language``` - Language.
+```Language``` - Язык.
 
-# How it works
+# Как это работает
 
-Headers: User-Agent and Accept are sent to the server, and we receive Web-Page and HTML in response from the server
+Заголовки: User-Agent и Accept отправляются на сервер, и мы получаем веб-страницу и HTML-код в ответ от сервера
 
 <img width="1482" height="583" alt="wbparser" src="https://github.com/user-attachments/assets/e95e2cc4-d6da-4bcb-90b8-92f991931ca7" />
 
-We have our WB URL and PARAMS,
+У нас есть WB URL и PARAMS,
 
 ```
 url = "https://search.wb.ru/exactmatch/ru/common/v18/search" 
@@ -75,27 +75,27 @@ params = {
 }
 ```
 ```
-wildberries uses an API to get the information we're interested in on the page. Let's go to the website and open any category. Let's choose Electronics -> Headsets and Earbuds.
-Now, open the developer tool, switch to the network tab to view the requests sent by the website, and select the Fetch/XHR filter. Reload the page.
+wildberries использует API для получения интересующей нас информации на странице. Давайте зайдем на сайт и откроем любую категорию. Давайте выберем Электронику -> Гарнитуры и наушники-вкладыши.
+Теперь откройте инструмент разработчика, перейдите на вкладку сеть, чтобы просмотреть запросы, отправленные веб-сайтом, и выберите фильтр Fetch/XHR. Перезагрузите страницу.
 ```
 
-We have received the URL, and now we will analyze the most important parameters
+Мы получили URL-адрес, и теперь проанализируем наиболее важные параметры
 
-```"curr"``` - Currensy, responsible for the currency in which the response will be sent.
+```"curr"``` - Currency, отвечающий за валюту, в которой будет отправлен ответ.
 
-```"lang"``` - Language, this is important for WB.
+```"lang"``` - Язык, это важно для WB.
 
-```"query"``` - Query, THIS IS VERY IMPORTANT, the request can be like ```"%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD"``` and like ```"Smartphone"```.
+```"query"``` - Запрос, ЭТО ОЧЕНЬ ВАЖНО, запрос может быть как  ```"%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD"``` или ```"Smartphone"```.
 
 
 <img width="727" height="387" alt="image" src="https://github.com/user-attachments/assets/5004887c-aefa-4149-9805-04cd17fa5b2a" />
 
-After receiving the HTML, we take the JSON and extract specific blocks from it
+После получения HTML-кода мы берем JSON и извлекаем из него определенные блоки
 
 ```
 product['name'] - Product Name.
 
-product['sizes'][0]['price']['basic'] / 100 - We get the price, and since it's displayed in cents, we divide it by 100 to get dollars or ruble.
+product['sizes'][0]['price']['basic'] / 100 - Мы получаем цену, и поскольку она указана в центах, мы делим ее на 100, чтобы получить доллары или рубли.
 ```
 
 # Contact
