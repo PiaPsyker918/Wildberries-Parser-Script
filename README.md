@@ -23,8 +23,7 @@ requests
 1. Install the zip-file.
 2. Open CMD and write.
 ```pip install requests```
-3. Download the .mp4 file.
-4. Next step in "How to use".
+3. Next step in "How to use".
 
 # How to use
 
@@ -33,13 +32,13 @@ In CMD write
 Windows
 
 ```
-.\main.py -f video_file.mp4
+.\parser.py
 ```
 
 Linux
 
 ```
-$ ./main.py -f video_file.mp4
+$ ./parser.py
 ```
 
 # Options
